@@ -195,7 +195,7 @@ class LDAPConnection (object):
             sasl = _ldap_sasl.gssapi()
             self.connection.sasl_interactive_bind_s('', sasl)
         else:
-            self.connection.bind(
+            self.connection.bind_s(
                 self.config.get('auth', 'user'),
                 self.config.get('auth', 'password'),
                 _ldap.AUTH_SIMPLE)
